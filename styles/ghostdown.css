@@ -1,0 +1,99 @@
+html,
+body {
+    font-family: 'Roboto', 'Helvetica', sans-serif;
+}
+
+strong,
+b {
+    font-weight: 700;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Roboto Slab", "Helvetica", "Arial", sans-serif;
+}
+
+code {
+    font-family: "Roboto mono", monospace;
+}
+
+.ghostdown-content {
+    border-radius: 2px;
+    padding: 50px 56px;
+    margin-bottom: 50px;
+    max-width: 1600px;
+}
+
+.ghostdown-content img {
+    max-width: 100%;
+}
+
+.ghostdown-container-edit .ghostdown-content {
+    margin-bottom: 0;
+    padding: 0;
+    position:relative;
+}
+
+.ghostdown-edit-content {
+    position:absolute;
+    top: 50px;
+    bottom: 50px;
+    left: 0;
+    right: 0;
+    width: 99%;
+}
+.editor-title {
+    font-family: "Roboto Condensed", "Helvetica", "Arial", sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+    height: 42px;
+    margin: 0;
+    padding: 0 10px;
+}
+
+.ghostdown-button-save {
+    position: absolute;
+    bottom: 7px;
+    right: 7px;
+}
+
+.ghostdown-container {
+    position:absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+#ghostdown-preview {
+    overflow-y: scroll;
+    position: absolute;
+    top:42px; right:0; bottom:0; left:0;
+    padding: 0 15px 15px;
+}
+
+.ghostdown-panel {
+    position:relative;
+    margin-bottom: 50px;
+}
+
+.ghostdown-footer {
+    position:absolute;
+    left:0; right:0; bottom:0;
+    padding: 15px;
+}
+
+#ghostdown-wordcount {
+    float:right;
+    display: inline-block;
+    margin-top: -42px;
+    padding: 10px 10px 0 0
+}
+
+.CodeMirror {
+    position:absolute;
+    top:42px; right:0; bottom:0; left:0;
+    height: auto;
+    font-family: "Roboto Mono", monospace;
+}

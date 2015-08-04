@@ -46,7 +46,7 @@ require([
 
     
     function updateImagePlaceholders() {
-        var plist = Array.prototype.slice.call(document.querySelectorAll('#ghostdown-preview p'));
+        /*var plist = Array.prototype.slice.call(document.querySelectorAll('#ghostdown-preview p'));
         var imgPlaceholders = plist.filter(function (element) {
             return (/^(?:\{<(.*?)>\})?!(?:\[([^\n\]]*)\])(?:\(([^\n\]]*)\))?$/gim).test(element.textContent);
         });
@@ -78,7 +78,7 @@ require([
                     }
                 });
             }
-        );
+        );*/
     }
 
     function updatePreview() {
@@ -94,17 +94,17 @@ require([
     updatePreview();
 
     function syncScroll() {
-        var codeViewport = document.querySelector('.CodeMirror-scroll'),
+        /*var codeViewport = document.querySelector('.CodeMirror-scroll'),
             previewViewport = document.querySelector('.entry-preview-content'),
             codeContent = document.querySelector('.CodeMirror-sizer'),
-            previewContent = document.querySelector('.rendered-markdown'),
+            previewContent = document.querySelector('#rendered-markdown'),
 
             codeHeight = codeContent.clientHeight - window.getComputedStyle(codeViewport, null).height.split("px")[0],
             previewHeight = previewContent.clientHeight - window.getComputedStyle(previewViewport, null).height.split("px")[0],
             ratio = previewHeight / codeHeight,
             previewPostition = codeViewport.scrollTop * ratio;
 
-        previewViewport.scrollTop = previewPostition;
+        previewViewport.scrollTop = previewPostition;*/
     }
 
     document.querySelector('.CodeMirror-scroll').onscroll = syncScroll;

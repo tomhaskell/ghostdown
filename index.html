@@ -3,52 +3,67 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Ghost Down</title>
+    <title>Ghostdown</title>
 
-    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.1/material.grey-red.min.css" /> 
+    <!-- Material Design Lite CSS pack & fonts -->
+    <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.2/material.grey-light_blue.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:700,400italic,400|Roboto+Condensed:300|Roboto+Mono|Roboto+Slab" >
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:700,400italic,400|Roboto+Condensed:300|Roboto+Mono|Roboto+Slab">
+
+    <!-- Third-party css -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.5.0/codemirror.min.css" media="all" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min.css" media="all" rel="stylesheet">
+
+    <!-- Ghostdown css -->
+    <link href="styles/ghostdown.css" media="all" rel="stylesheet">
 
 </head>
 
 <body>
-    <div class="ghostdown-container mdl-grid">
-        <div class="ghostdown-editor-panel mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--6-col">
-            <h2 class="editor-title">Markdown</h2>
-            <form action="/article/save" method="post">
+
+    <form action="/article/save" method="post">
+        <div class="ghostdown-container mdl-grid">
+            <div class="ghostdown-panel mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--6-col">
+                <h2 class="editor-title">Markdown</h2>
                 <textarea name="content" id="ghostdown-editor"># Ghostdown 
-Ghost has an incredibly simple concept for writing. You write in [Markdown](http://daringfireball.net/markdown) on the left, and you see an immediate 
-preview of exactly what your post will look like in rendered HTML on the right. 
+Ghost has an incredibly simple concept for writing. You write in [Markdown](http://daringfireball.net/markdown) on the left, 
+and you see an immediate preview of exactly what your post will look like in rendered HTML on the right. 
 
 ![A placeholder for image] 
 
 ### The Benefits Are Obvious! 
-
 * Never stop writing, format on the fly 
 * No messing around with *buttons* everywhere 
 * No writing repetitive HTML markup 
 * Mobile friendly 
 
-It's a *wonderful* solution to a problem which **bloggers** have faced for many years now.
+It's a *wonderful* solution to a problem which **bloggers** have faced for many years now. 
 
-> Applying a multitude of formatting styles, with very little effort, and seeing those styles rendered exactly as they will appear 
-on the website. 
+> Applying a multitude of formatting styles, with very little effort, and seeing those styles rendered exactly as they will appear on the website. 
 
 Give it a try! Start typing in the `Markdown` box. It's easy.
                 </textarea>
-                <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-button--accent mdl-button--ripple-effect dragon-button-save" type="submit">Save</button>
-            </form>
-        </div>
-        <div class="ghostdown-preview-panel mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--6-col">
-            <h2 class="editor-title">Preview</h2>
-            <div id="ghostdown-preview"></div>
+
+            </div>
+            <div class="ghostdown-panel mdl-color--white mdl-shadow--4dp content mdl-color-text--grey-800 mdl-cell mdl-cell--6-col">
+                <h2 class="editor-title">Preview</h2>
+                <span class="editor-title" id="ghostdown-wordcount">0 Words</span>
+                <div id="ghostdown-preview"></div>
+
+            </div>
+            <footer class="ghostdown-footer mdl-mini-footer">
+                <div class="mdl-mini-footer--left-section">
+                    &copy;2015 THLabs.net&nbsp;&nbsp;|&nbsp;&nbsp;Powered by <a href="https://github.com/THLabs/ghostdown">ghostdown</a>
+                </div>
+                <div class="mdl-mini-footer--right-section">
+                    <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-button--accent mdl-button--ripple-effect ghostdown-button-save" type="submit">Save</button>
+                </div>
+            </footer>
 
         </div>
-    </div>
-    
-    <script type="text/javascript" data-main="/js/ghostdown" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.20/require.min.js"></script>
+    </form>
+
+    <script type="text/javascript" data-main="scripts/ghostdown" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.20/require.min.js"></script>
 
 </body>
 
