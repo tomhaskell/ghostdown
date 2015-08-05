@@ -18,31 +18,15 @@ code {
     font-family: "Roboto mono", monospace;
 }
 
-.ghostdown-content {
-    border-radius: 2px;
-    padding: 50px 56px;
-    margin-bottom: 50px;
-    max-width: 1600px;
-}
-
-.ghostdown-content img {
-    max-width: 100%;
-}
-
-.ghostdown-container-edit .ghostdown-content {
-    margin-bottom: 0;
-    padding: 0;
-    position:relative;
-}
-
 .ghostdown-edit-content {
-    position:absolute;
+    position: absolute;
     top: 50px;
     bottom: 50px;
     left: 0;
     right: 0;
     width: 99%;
 }
+
 .editor-title {
     font-family: "Roboto Condensed", "Helvetica", "Arial", sans-serif;
     text-transform: uppercase;
@@ -59,7 +43,7 @@ code {
 }
 
 .ghostdown-container {
-    position:absolute;
+    position: absolute;
     top: 0;
     right: 0;
     bottom: 0;
@@ -69,31 +53,69 @@ code {
 #ghostdown-preview {
     overflow-y: scroll;
     position: absolute;
-    top:42px; right:0; bottom:0; left:0;
+    top: 42px;
+    right: 0;
+    bottom: 0;
+    left: 0;
     padding: 0 15px 15px;
 }
 
+#ghostdown-preview img {
+    max-width: 100%;
+}
+
 .ghostdown-panel {
-    position:relative;
+    position: relative;
     margin-bottom: 50px;
 }
 
 .ghostdown-footer {
-    position:absolute;
-    left:0; right:0; bottom:0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
     padding: 15px;
 }
 
 #ghostdown-wordcount {
-    float:right;
+    float: right;
     display: inline-block;
     margin-top: -42px;
     padding: 10px 10px 0 0
 }
 
 .CodeMirror {
-    position:absolute;
-    top:42px; right:0; bottom:0; left:0;
+    position: absolute;
+    top: 42px;
+    right: 0;
+    bottom: 0;
+    left: 0;
     height: auto;
     font-family: "Roboto Mono", monospace;
 }
+
+/********************************************
+ *  CodeMirror Markup Styling
+ *******************************************/
+.CodeMirror .cm-header{
+    color: #000;
+}
+.CodeMirror .cm-header-1 {
+    font-size: 40px;
+    line-height: 1.35;
+    margin: 18px 0;
+    display: inline-block;
+}
+.CodeMirror .cm-header-2 {
+    font-size: 30px;
+    line-height: 1.35;
+    margin: 5px 0;
+    display: inline-block;
+}
+.CodeMirror .cm-header-3 {
+    font-size: 24px;
+    line-height: 1.35;
+    margin: 5px 0;
+    display: inline-block;
+}
+

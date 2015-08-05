@@ -46,9 +46,8 @@ require([
 
     
     function updateImagePlaceholders() {
-        /*var plist = Array.prototype.slice.call(document.querySelectorAll('#ghostdown-preview p'));
-        var imgPlaceholders = plist.filter(function (element) {
-            return (/^(?:\{<(.*?)>\})?!(?:\[([^\n\]]*)\])(?:\(([^\n\]]*)\))?$/gim).test(element.textContent);
+        var imgPlaceholders = (Array.prototype.slice.call(document.querySelectorAll('#ghostdown-preview p'))).filter(function (p) {
+            return (/^(?:\{<(.*?)>\})?!(?:\[([^\n\]]*)\])(?:\(([^\n\]]*)\))?$/gim).test(p.innerText);
         });
         Dropzone.autoDiscover = false;
 
@@ -78,7 +77,7 @@ require([
                     }
                 });
             }
-        );*/
+        );
     }
 
     function updatePreview() {
