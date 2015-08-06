@@ -57,6 +57,8 @@ code {
     right: 0;
     bottom: 0;
     left: 0;
+}
+#ghostdown-rendered {
     padding: 0 15px 15px;
 }
 
@@ -97,6 +99,9 @@ code {
 /********************************************
  *  CodeMirror Markup Styling
  *******************************************/
+.CodeMirror-lines{
+    padding: 0 7px 20px;
+}
 .CodeMirror .cm-header{
     color: #000;
 }

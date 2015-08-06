@@ -17,7 +17,7 @@ require.config({
         dropzone: 'https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/min/dropzone.min'
     },
     shim: {
-        'dropzone':{
+        'dropzone': {
             exports: 'Dropzone'
         }
     }
@@ -34,9 +34,9 @@ require([
     console.log(CodeMirror);
     console.log(showdown);
     console.log(Dropzone);
-    
+
     var textarea = document.querySelector('#ghostdown-editor');
-    var preview = document.querySelector('#ghostdown-preview');
+    var preview = document.querySelector('#ghostdown-rendered');
     var converter = new showdown.Converter();
     var editor = CodeMirror.fromTextArea(textarea, {
         mode: 'markdown',
@@ -44,9 +44,9 @@ require([
         lineWrapping: true
     });
 
-    
+
     function updateImagePlaceholders() {
-        var imgPlaceholders = (Array.prototype.slice.call(document.querySelectorAll('#ghostdown-preview p'))).filter(function (p) {
+        var imgPlaceholders = (Array.prototype.slice.call(document.querySelectorAll('ghostdown-rendered p'))).filter(function (p) {
             return (/^(?:\{<(.*?)>\})?!(?:\[([^\n\]]*)\])(?:\(([^\n\]]*)\))?$/gim).test(p.innerText);
         });
         Dropzone.autoDiscover = false;
@@ -93,17 +93,23 @@ require([
     updatePreview();
 
     function syncScroll() {
-        /*var codeViewport = document.querySelector('.CodeMirror-scroll'),
-            previewViewport = document.querySelector('.entry-preview-content'),
+        var codeViewport = document.querySelector('.CodeMirror-scroll'),
+            previewViewport = document.querySelector('#ghostdown-preview'),
             codeContent = document.querySelector('.CodeMirror-sizer'),
-            previewContent = document.querySelector('#rendered-markdown'),
+            previewContent = document.querySelector('#ghostdown-rendered'),
 
             codeHeight = codeContent.clientHeight - window.getComputedStyle(codeViewport, null).height.split("px")[0],
-            previewHeight = previewContent.clientHeight - window.getComputedStyle(previewViewport, null).height.split("px")[0],
+            // TODO: for some reason, this needs a 50px 'bodge' to make it scroll to the bottom properly
+            previewHeight = previewContent.clientHeight - window.getComputedStyle(previewViewport, null).height.split("px")[0] + 50,
             ratio = previewHeight / codeHeight,
             previewPostition = codeViewport.scrollTop * ratio;
+        
 
-        previewViewport.scrollTop = previewPostition;*/
+        previewViewport.scrollTop = previewPostition;
+        
+        console.log( "code.clientHeight: "+codeContent.clientHeight+" , codeViewport.computedStyle: "+window.getComputedStyle(codeViewport, null).height );
+        console.log( "preview.clientHeight: "+previewContent.clientHeight+" , previewViewport.computedStyle: "+window.getComputedStyle(previewViewport, null).height );
+        console.log( "code.scrollTop: "+codeViewport.scrollTop+", preview.scrollTop: "+previewViewport.scrollTop);
     }
 
     document.querySelector('.CodeMirror-scroll').onscroll = syncScroll;
