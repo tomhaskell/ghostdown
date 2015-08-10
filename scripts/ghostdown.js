@@ -54,7 +54,8 @@ require([
                 var dropzone = new Dropzone(element, {
                     url: "/content/upload",
                     success: function (file, response) {
-                        var holderP = file.previewElement.closest("p"),
+                        var response = JSON.parse(response),
+                            holderP = file.previewElement.closest("p"),
                             preList = Array.prototype.slice.call(document.querySelectorAll('.CodeMirror-code pre')),
                             imgHolderMarkdown = preList.filter(function (element) {
                                 return (/^(?:\{<(.*?)>\})?!(?:\[([^\n\]]*)\])(?:\(([^\n\]]*)\))?$/gim).test(element.textContent) && (element.querySelectorAll('span').length === 0);
