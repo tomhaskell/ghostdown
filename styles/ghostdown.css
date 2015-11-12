@@ -14,7 +14,7 @@ h3 {
     font-family: "Roboto Slab", "Helvetica", "Arial", sans-serif;
 }
 
-code {
+pre, code {
     font-family: "Roboto mono", monospace;
 }
 
@@ -86,6 +86,9 @@ code {
     padding: 10px 10px 0 0
 }
 
+/********************************************
+ *  CodeMirror Markup Styling
+ *******************************************/
 .CodeMirror {
     position: absolute;
     top: 42px;
@@ -95,10 +98,6 @@ code {
     height: auto;
     font-family: "Roboto Mono", monospace;
 }
-
-/********************************************
- *  CodeMirror Markup Styling
- *******************************************/
 .CodeMirror-lines{
     padding: 0 7px 20px;
 }
@@ -124,3 +123,11 @@ code {
     display: inline-block;
 }
 
+
+/********************************************
+ *  Dropzone Styling
+ *******************************************/
+
+p.dropzone {
+    
+}
